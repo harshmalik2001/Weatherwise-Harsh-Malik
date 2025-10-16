@@ -1,3 +1,6 @@
+Tool: Perplexity Pro
+Date: 16-10-2025
+
 Requesting pseudocode for weather data function
 
 Me: Can you give me pseudocode for a function that fetches weather data from wttr.in and returns a dictionary?
