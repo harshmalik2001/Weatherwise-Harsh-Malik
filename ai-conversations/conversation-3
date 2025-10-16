@@ -1,0 +1,28 @@
+Handling incorrect AI response
+Me: The AI suggested using 'forecast_days=5' for wttr.in, but the API only returns 3 days. How should I handle this?
+AI: You should limit the forecast_days parameter to 3 and inform users about the API limitation.
+
+Me: Can you show me how to update my function and add a user message?
+AI: Yes, update your function to slice the weather data to 3 days and print a note:
+
+python
+def get_weather_data(location, forecast_days=3):
+    url = f"https://wttr.in/{location}?format=j1"
+    response = requests.get(url)
+    data = response.json()
+    data['weather'] = data['weather'][:3]
+    print("Note: Only 3 days of forecast are available from wttr.in.")
+    return data
+Me: can i simply set the default value for 3 days
+AI: Yes, you can simply set the default value for forecast_days to 3 in your function definition:
+
+python
+def get_weather_data(location, forecast_days=3):
+    # function body
+This means:
+
+If you call get_weather_data("Perth"), it will use 3 days by default.
+
+If you call get_weather_data("Perth", 2), it will use 2 days.
+
+This is standard Python syntax for default arguments and is the recommended way to handle optional parameters.​
