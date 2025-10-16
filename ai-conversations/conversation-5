@@ -1,0 +1,19 @@
+Tool: Perplexity Pro
+Date: 16-10-2025
+
+Why use pyinputplus instead of input()?
+
+Me: Why should I use pyinputplus for user input instead of the built-in input() function?
+
+AI: pyinputplus provides input validation and will keep prompting the user until they enter valid data. For example, pyip.inputInt() only accepts integers, and you can set limits, timeouts, and default values. This makes your program more robust and user-friendly.
+
+Me: Can you show me an example?
+
+AI: Sure!
+
+python
+import pyinputplus as pyip
+age = pyip.inputInt(prompt="Enter your age: ", min=1, max=120)
+print("Your age is:", age)
+Me: That’s helpful! Now my program won’t crash if the user enters something invalid.
+
