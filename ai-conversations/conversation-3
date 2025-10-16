@@ -29,3 +29,12 @@ If you call get_weather_data("Perth"), it will use 3 days by default.
 If you call get_weather_data("Perth", 2), it will use 2 days.
 
 This is standard Python syntax for default arguments and is the recommended way to handle optional parameters.​
+
+
+
+
+Intentional Prompting: 
+The purpose of this exchange was to test and fix an AI recommendation that failed to match the actual restrictions of the API. 
+Your request for code modification and verification of the advice forced the AI to confirm the 3-day restriction and develop an
+easy-to-use solution. 
+The exchange showcases your ability to think critically while working with AI through multiple rounds of improvement.
