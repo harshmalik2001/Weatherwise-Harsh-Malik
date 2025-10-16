@@ -1,0 +1,28 @@
+Tool: Perplexity Pro
+Date: 16-10-2025
+  
+Testing code and simulating network errors
+
+Me: How can I test my get_weather_data function to make sure it works for both successful and failed API calls?
+
+AI: You can use Python’s unittest framework and the unittest.mock library to simulate different API responses, including network errors. This way, you can test your error handling without relying on the real API.
+
+Me: Can you show me how to write a test that simulates a network error?
+
+AI: Yes! Here’s an example using unittest and patch to mock requests.get so it raises an exception:
+
+python
+import unittest
+from unittest.mock import patch
+
+class TestWeatherAdvisor(unittest.TestCase):
+    @patch('requests.get')
+    def test_get_weather_data_network_error(self, mock_get):
+        # Simulate a network error
+        mock_get.side_effect = Exception("Network error")
+        result = get_weather_data('Perth', 3)
+        self.assertIsNone(result)
+
+if __name__ == '__main__':
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)
+Me: I ran this test and it passed! The function printed "Error fetching weather data: Network error" and returned None, just as expected.
