@@ -1,3 +1,6 @@
+Tool: Perplexity Pro
+Date: 16-10-2025
+
 Handling incorrect AI response
 Me: The AI suggested using 'forecast_days=5' for wttr.in, but the API only returns 3 days. How should I handle this?
 AI: You should limit the forecast_days parameter to 3 and inform users about the API limitation.
