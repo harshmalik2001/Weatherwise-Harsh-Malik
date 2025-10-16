@@ -12,5 +12,9 @@ AI: wttr.in is easier for beginners because you can fetch data with a simple req
 Me: What are the limitations of wttr.in for my assignment?
 AI: The main limitation is the 3-day forecast cap. If your assignment requires more days or advanced features, OpenWeatherMap is better.
 
-# Note: This conversation helped me decide to use wttr.in for simplicity and to meet core requirements.
 
+The main objective involved testing two weather APIs (wttr.in and OpenWeatherMap) to 
+determine which one would work best for a student assignment. 
+The prompts were created to obtain a direct comparison between the two APIs regarding their features 
+and their usability for beginners and their operational constraints. The API selection process focused on 
+finding an implementation that would be straightforward to use and fulfill all requirements of the assignment.
