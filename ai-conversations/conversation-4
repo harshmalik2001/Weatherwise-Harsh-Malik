@@ -26,3 +26,9 @@ class TestWeatherAdvisor(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
 Me: I ran this test and it passed! The function printed "Error fetching weather data: Network error" and returned None, just as expected.
+
+
+Intentional Prompting:
+The main goal involved understanding methods to verify API-based code through methods that avoid actual network requests. 
+Your request to simulate errors led the AI to show you the process of mocking and unit testing. 
+Your code received testing for both successful and unsuccessful scenarios which resulted in better reliability and easier maintenance
