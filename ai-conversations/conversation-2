@@ -1,0 +1,86 @@
+Requesting pseudocode for weather data function
+
+Me: Can you give me pseudocode for a function that fetches weather data from wttr.in and returns a dictionary?
+AI: Sure! Here is the pseudocode:
+    - Define function get_weather_data(location, forecast_days)
+    - Build URL for wttr.in with location and format=j1
+    - Send GET request
+    - Parse JSON response
+    - Return dictionary with weather data
+
+Me: Please write the actual Python code for this function.
+AI: Here is the actual Python code for a function that fetches weather data from wttr.in and returns a dictionary:
+
+python
+import requests
+
+def get_weather_data(location, forecast_days=3):
+    """
+    Retrieve weather data for a specified location using wttr.in API.
+    Args:
+        location (str): City or location name
+        forecast_days (int): Number of days to forecast (max 3 for wttr.in)
+    Returns:
+        dict: Weather data including current conditions and forecast
+    """
+    url = f"https://wttr.in/{location}?format=j1"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        # wttr.in only provides 3 days of forecast
+        data['weather'] = data['weather'][:forecast_days]
+        return data
+    except Exception as e:
+        print(f"Error fetching weather data: {e}")
+        return None
+
+# Example usage:
+# weather = get_weather_data("Perth", 3)
+# print(weather)
+This function builds the correct URL, sends a GET request, parses the JSON, and returns the weather data as a dictionary.
+
+It also limits the forecast to the number of days requested (up to 3, as supported by wttr.in).
+
+If there is an error (e.g., network issue or invalid city), it prints an error message and returns None.
+
+Me: do we need to use raise for status necessarily
+AI: You do not have to use raise_for_status()—but it is considered a best practice for robust error handling when making HTTP requests in Python.
+
+What does raise_for_status() do?
+It checks if the HTTP response status code is 4xx or 5xx (client/server error).
+
+If so, it raises a requests.exceptions.HTTPError and stops your code, so you don’t accidentally process bad or incomplete data.
+
+If the status code is 2xx (success), it does nothing and your code continues.​
+
+Alternatives
+You can manually check the status code:
+
+python
+response = requests.get(url)
+if response.status_code == 200:
+    # process data
+else:
+    print("Error:", response.status_code)
+This works, but you must remember to handle all possible error codes yourself.
+
+Why use raise_for_status()?
+It prevents your program from silently continuing with bad data.
+
+It makes debugging easier by surfacing errors immediately.
+
+It’s especially useful for API calls where you expect a 200 OK and want to treat anything else as a failure.​
+
+When is it not necessary?
+If you want to handle different status codes in custom ways (e.g., retry on 503, show a message on 404), you might skip raise_for_status() and use your own logic.
+
+Summary:
+You don’t have to use raise_for_status(), but it’s a good practice for most API requests. 
+  It makes your code safer and easier to debug, especially for student projects and production code. 
+  If you want simple, robust error handling, keep it in your function. 
+  If you want custom error handling, you can check response.status_code yourself.​
+Me: Can you add error handling for failed requests?
+AI: [Provides improved code with try/except]
+
+# Note: I used this iterative prompting to improve code quality and robustness.
