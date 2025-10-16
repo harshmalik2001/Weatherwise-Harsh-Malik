@@ -17,3 +17,7 @@ age = pyip.inputInt(prompt="Enter your age: ", min=1, max=120)
 print("Your age is:", age)
 Me: That’s helpful! Now my program won’t crash if the user enters something invalid.
 
+Intentional Prompting:
+The purpose of this prompt was to determine the most effective methods for validating user input. 
+Your request for a comparison and practical example led the AI to show the benefits of pyinputplus and provide an example of its application. 
+Your project received improved user-friendly input handling through the specific guidance you received from the AI system.
