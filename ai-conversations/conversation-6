@@ -1,0 +1,102 @@
+Tool: Perplexity Pro
+Date: 16-10-2025
+
+Me: def main_menu():
+    print("Welcome to Weather Advisor!")
+    while True:
+        print("\nPlease choose an option:")
+        print("1 - View Weather Information")
+        print("2 - Ask a Weather Question")
+        print("3 - Display Temperature Graph")
+        print("4 - Display Rain/Precipitation Graph")
+        print("5 - Quit")
+
+
+        choice = pyip.inputChoice(['1','2','3','4','5'], prompt="Enter choice (1-5): ")
+
+
+        if choice == '5':
+            print("Goodbye!")
+            break
+
+
+        location = pyip.inputStr(prompt="Enter location (city name): ")
+        weather_data = get_weather_data(location, forecast_days=3)
+        if not weather_data:
+            print("Could not retrieve weather data. Please try again.")
+            continue
+
+
+        if choice == '1':
+            response = generate_weather_response({'location': location, 'attribute': None, 'time_period': 'today'}, weather_data)
+            print(response)
+        elif choice == '2':
+            question = pyip.inputStr(prompt="Ask your weather question: ")
+            parsed = parse_weather_question(question)
+            parsed['location'] = location  
+            response = generate_weather_response(parsed, weather_data)
+            print(response)
+        elif choice == '3':
+            create_temperature_visualisation(weather_data)
+        elif choice == '4':
+            create_precipitation_visualisation(weather_data) this code is working fine but when i choose 3 and it shows graph after that i cannot chose the options again there is no input field
+
+AI: The reason your menu doesn’t reappear after displaying a graph is because matplotlib.pyplot.show() blocks your program — it pauses execution until you manually close the graph window. That’s normal for matplotlib.
+
+To make your graph display non-blocking (so the user can continue interacting with your menu), you can use plt.show(block=False) or plt.pause() before continuing the loop.
+
+Here’s how you can fix it:
+
+✅ Option 1 — Use Non-blocking Show
+This allows the graph to appear while keeping your menu responsive.
+
+python
+import matplotlib.pyplot as plt
+
+def create_temperature_visualisation(weather_data):
+    days = [day['date'] for day in weather_data['weather']]
+    max_temps = [int(day['maxtempC']) for day in weather_data['weather']]
+    min_temps = [int(day['mintempC']) for day in weather_data['weather']]
+
+    plt.figure(figsize=(8, 5))
+    plt.plot(days, max_temps, color='red', marker='o', label='Max Temp (°C)')
+    plt.plot(days, min_temps, color='blue', marker='o', label='Min Temp (°C)')
+    plt.xlabel('Day')
+    plt.ylabel('Temperature (°C)')
+    plt.title('Temperature Trend')
+    plt.legend()
+    plt.grid(True)
+    plt.show(block=False)   # ✅ graph will not block the menu
+    plt.pause(0.001)        # allows window to render
+✅ Option 2 — Use Interactive Mode
+You can turn on interactive mode to keep the plot open and continue your loop.
+
+At the top of your code (before calling any plots):
+
+python
+import matplotlib.pyplot as plt
+plt.ion()  # Enable interactive mode
+Then at the end of your plot function:
+
+python
+plt.show()
+plt.pause(0.001)
+Interactive mode keeps plots responsive while your program accepts new input.
+
+✅ Option 3 — Close the Plot Automatically After Few Seconds
+If you just want the user to see the graph briefly and then return to the menu:
+
+python
+plt.show(block=False)
+plt.pause(4)   # display for 4 seconds
+plt.close()    # close the figure automatically
+Recommended for You
+Since your weather advisor runs in a looped text interface (main_menu()), Option 1 (non-blocking show) is the best.
+It keeps the figure visible and lets your code continue, allowing the menu to be shown again instantly after plotting.
+
+Would you like me to modify your full main_menu() function with this fix applied to both options 3 and 4 (temperature and precipitation visualization)?
+
+Me: No, I will do it by myself.
+
+
+Intentional Prompting:
