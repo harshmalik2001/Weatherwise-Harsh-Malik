@@ -100,3 +100,10 @@ Me: No, I will do it by myself.
 
 
 Intentional Prompting:
+The purpose of this prompt was to solve a user-experience issue in my command-line weather advisor app, where the program froze after displaying a graph. My intention was to learn how to make matplotlib plots non-blocking so the user could continue interacting with the main menu without closing the graph window manually.
+
+Through iterative prompting, I asked the AI to explain why the issue occurred, and it identified that plt.show() is a blocking call that stops code execution until the window is closed. I then requested several possible solutions, leading to the introduction of plt.show(block=False) and plt.pause(), which allowed the application to remain responsive.
+
+The AI also suggested enabling interactive mode with plt.ion() for more flexibility and showed me how to automatically close the plot after a few seconds using plt.pause(4) and plt.close().
+
+By following these techniques, my project achieved smoother and more interactive behavior during graph visualization. This intentional prompting enhanced my understanding of blocking vs non-blocking behavior in Python’s matplotlib and improved the usability of my Weather Advisor menu system.
