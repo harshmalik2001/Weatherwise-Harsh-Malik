@@ -55,15 +55,8 @@ The system produced pseudocode and function structure for essential functions an
 ---
 
 ## 📂 Project Structure
-Weatherwise-Harsh-Malik/
-│
-├── ai-conversations/ # Saved AI chat transcripts
-├── submission/ # Reflection and checklist files
-│ ├── reflection-template.md
-│ └── checklist-md.md
-  ├── starter_notebook.ipynb # Main code notebook# Reference files and guides
-├── resources/
-  
+<img width="225" height="630" alt="image" src="https://github.com/user-attachments/assets/d35a8395-49d6-4716-9e9b-3ed0866566d8" />
+
 
 
 **Author:** Harsh Malik  
