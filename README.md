@@ -1,63 +1,71 @@
-# 🌦️ WeatherWise Template
+# 🌤 Weatherwise — Python Weather Advisor
 
-Welcome to the **WeatherWise Assignment Starter Template**! This repository helps you kickstart your project by combining Python, weather APIs, data visualisation, and AI-assisted development. 🤖📊
+## 📘 Overview
 
-![Build With AI](https://img.shields.io/badge/Built_with-AI-blueviolet?logo=openai)
-![Python](https://img.shields.io/badge/Made_with-Python-3776AB?logo=python)
-![Visualisation](https://img.shields.io/badge/Includes-Visualisations-orange?logo=plotly)
-
----
-
-## 🚀 How to Use This Template
-
-1. Click **"Use this template"** on GitHub to create your own copy.
-2. Rename your repository to something like `weatherwise-jane-doe`.
-3. Clone it and start developing in `starter_notebook.ipynb`.
+Weatherwise operates as a basic Python application that retrieves current weather information through the **wttr.in API**.  
+Users can access daily weather forecasts and ask questions in natural speech while the application shows temperature and precipitation patterns through interactive charts.  
+The project serves as an academic assignment which showcases modular code development and API management and AI-assisted development through Perplexity Pro.
 
 ---
 
-## 📁 Folder Structure
-
-- `starter_notebook.ipynb` — Main notebook to build your project.
-- `ASSIGNMENT.md` — Full assignment specification.
-- `ai-conversations/` — Save your `.txt` AI conversations here.
-- `resources/` — Guides, prompting tips, and AI technique examples.
-- `submission/` — Files to help you finalise your submission:
-  - `checklist-md.md` — Submission checklist
-  - `reflection.md` — Write your 300–500 word project reflection
-  - `one-page-summary.md` — (Optional) Your own summary of key ideas or process
+## ⚙️ Features
+-The application retrieves current weather information through the **wttr.in API**.
+-The application manages API problems and restricts data retrieval to three days of forecasts.
+-The application shows temperature and rainfall data through **matplotlib**.
+-The application uses **pyinputplus** to perform user input validation.
+-The application provides users with a simple menu-based command-line interface.
+-The application shows how to create AI prompts while teaching the system to learn.
 
 ---
 
-📄 **Quick Overview:**  
-A one-page summary of the full assignment is available in [`resources/assignment-summary.md`](resources/assignment-summary.md).
+## 🧠 AI Assistance
+
+The AI system (Perplexity Pro) performed the following tasks:
+The system produced pseudocode and function structure for essential functions and enhanced API management and error detection systems and proposed modular programming approaches and visualization solutions and provided solutions to resolve `matplotlib` blocking problems and documented my thought process and specific prompting techniques.
 
 ---
 
-## 📓 Submission Checklist
-
-✅ Complete all required functions  
-✅ Include at least 5 AI conversations in `ai-conversations/`  
-✅ Document your intentional prompting  
-✅ Fill in your project reflection in `submission/reflection-template.md`  
-✅ Zip your project and upload it to the LMS  
+## 🧩 Technology Stack
+| Category | Tools/Libraries |
+|-----------|----------------|
+| Language | Python 3.x |
+| API | wttr.in |
+| Data Handling | requests |
+| User Input | pyinputplus |
+| Visualization | matplotlib, seaborn |
 
 ---
 
-🧠 AI Conversations  
-Save your AI interactions in the `ai-conversations/` folder.  
-See `ai-conversations/how-to-log-ai-conversations.md` for details.
+## ▶️ How to Run
+1. **Clone or download the repository:**
+
+2. **Install required libraries:**
+
+3. **Run the app:**
+*(or open the notebook in JupyterLab / Google Colab)*
+
+---
+
+## 📊 Data Visualizations
+- **Temperature Trend Line Chart:** Shows daily max/min temperature  
+- **Precipitation Bar Chart:** Displays average daily rainfall  
+- **Combo Chart:** Compares rainfall and temperature on dual axes  
 
 
---
-## 🧠 Need Help with AI Prompts?
+---
 
-Check out:
-Check out:
-- `resources/ai-tips-tricks.md` — Prompting tips and pitfalls
-- `resources/sample-prompting-journey.md` — Full example of AI-enhanced development
-- `resources/prompts-by-method-step.md` — Prompts aligned with the 6-step dev process
-- `resources/before-after-example.md` — Required: Show how your prompting improved AI-generated code
+## 📂 Project Structure
+Weatherwise-Harsh-Malik/
+│
+├── ai-conversations/ # Saved AI chat transcripts
+├── submission/ # Reflection and checklist files
+│ ├── reflection-template.md
+│ └── checklist-md.md
+  ├── starter_notebook.ipynb # Main code notebook# Reference files and guides
+├── resources/
+  
 
 
-Good luck and have fun! 💡🌤️
+**Author:** Harsh Malik  
+**Institution:** Curtin University, Perth  
+**Date:** 17 October 2025  
