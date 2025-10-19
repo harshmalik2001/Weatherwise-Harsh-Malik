@@ -31,7 +31,7 @@ def get_weather_data(location, forecast_days=3):
         print(f"Error fetching weather data: {e}")
         return None
 ### Step 5 – Testing
-Tested the function with multiple cities (`Perth`, `Delhi`). Simulated network failures using mock tests. Observed correct handling of valid and invalid inputs without program crashes.
+Tested the function with multiple cities (`Perth`, `Sydney`). Simulated network failures using mock tests. Observed correct handling of valid and invalid inputs without program crashes.
 
 ### Step 6 – Improvement
 Enhanced with user-friendly messages and integrated it with visualizations for practical utility. Added API call limitations (max 3 days) to prevent misuse.
