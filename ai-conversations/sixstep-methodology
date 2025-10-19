@@ -12,7 +12,9 @@ Step 4 – Implementation
 Translated the design into Python code using iterative search for keywords inside the question. Returned structured dictionaries for downstream response generation.
 
 Step 5 – Testing
-Tested phrases such as "What is the temperature in Perth tomorrow?" and "Will it rain in Sydney today?" for correct detection of all attributes. Verified fallback to defaults on ambiguous input.
+Tested phrases such as
+
+"What is the temperature in Perth tomorrow?" and "Will it rain in Sydney today?" for correct detection of all attributes. Verified fallback to defaults on  input.
 
 Step 6 – Enhancement
 Enhanced robustness by handling multi-word city names (future work), improving parsing accuracy, and making the code case-insensitive for user convenience.
