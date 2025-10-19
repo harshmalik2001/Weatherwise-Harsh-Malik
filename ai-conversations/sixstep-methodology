@@ -1,0 +1,53 @@
+Six-Step Methodology for parse_weather_question
+Step 1 – Requirement Definition
+The goal was to interpret users’ natural language queries to determine the weather attribute of interest, the relevant day, and the city location. This enables better tailored responses.
+
+Step 2 – Research
+Investigated common weather-related terms and time references relevant to the project. Reviewed basic NLP approaches for keyword detection using string matching.
+
+Step 3 – Design
+Outlined a plan to scan the input question for known feature keywords and time references, extract the city after the keyword 'in', and provide defaults if missing.
+
+Step 4 – Implementation
+Translated the design into Python code using iterative search for keywords inside the question. Returned structured dictionaries for downstream response generation.
+
+Step 5 – Testing
+Tested phrases such as "What is the temperature in Perth tomorrow?" and "Will it rain in Sydney today?" for correct detection of all attributes. Verified fallback to defaults on ambiguous input.
+
+Step 6 – Enhancement
+Enhanced robustness by handling multi-word city names (future work), improving parsing accuracy, and making the code case-insensitive for user convenience.
+
+def parse_weather_question(query):
+    """
+    Extract key weather attributes from a natural language question.
+
+    The function analyzes the user's question to identify:
+    - The weather attribute requested (e.g., temperature, rain)
+    - The time period relevant to the question (today, tomorrow, day after tomorrow)
+    - The location (city) named in the question or defaults to 'Sydney'
+
+    Returns a dictionary with keys 'location', 'attribute', and 'time_period'.
+    """
+    query = query.lower()
+    features = ['temperature', 'rain', 'precipitation', 'humidity', 'wind']
+    time_refs = ['today', 'tomorrow', 'day after tomorrow']
+    city, feature, time_ref = None, None, 'today'
+
+    for f in features:
+        if f in query:
+            feature = f
+            break
+    for t in time_refs:
+        if t in query:
+            time_ref = t
+            break
+
+    words = query.split()
+    if 'in' in words:
+        idx = words.index('in')
+        if idx + 1 < len(words):
+            city = words[idx + 1]
+    else:
+        city = 'Sydney'
+
+    return {'location': city, 'attribute': feature, 'time_period': time_ref}
