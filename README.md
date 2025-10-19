@@ -55,7 +55,8 @@ The system produced pseudocode and function structure for essential functions an
 ---
 
 ## 📂 Project Structure
-<img width="225" height="630" alt="image" src="https://github.com/user-attachments/assets/d35a8395-49d6-4716-9e9b-3ed0866566d8" />
+<img width="216" height="656" alt="image" src="https://github.com/user-attachments/assets/e6b5784b-3933-4f1a-be7e-7aea17206342" />
+
 
 
 
